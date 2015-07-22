@@ -1,0 +1,17 @@
+{
+  "name": "api-demos",
+  "main": "index.html",
+  "version": "0.0.1",
+  "authors": [
+    "Craig Shoemaker <craig@craigshoemaker.net>"
+  ],
+  "description": "api demos",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
