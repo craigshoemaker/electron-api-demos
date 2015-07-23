@@ -3,6 +3,8 @@
 (function (window, document, module) {
 
 	'use strict';
+	
+	console.log('*** This is running in the renderer process. ***');
 
 	window.$ = window.jQuery = require.main.require('./bower_components/jquery/dist/jquery.js');
 		

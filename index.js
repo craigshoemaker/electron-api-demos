@@ -1,12 +1,19 @@
-var app = require('app');
-var mainWindow;
+(function () {
 
-app.on('ready', function () {
+    'use strict';
 
-    mainWindow = require('./index.browser-window.js').get();
+    var app = require('app');
+    var mainWindow;
 
-    require('./index.global-shortcut.js').register(mainWindow);
+    console.log('**** This is running in the main process. ***');
 
-    require('./index.power-monitor.js');
+    app.on('ready', function () {
 
-});
+        mainWindow = require('./index.browser-window.js').get();
+
+        require('./index.global-shortcut.js').register(mainWindow);
+        require('./index.power-monitor.js');
+
+    });
+
+} ());
