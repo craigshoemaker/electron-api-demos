@@ -9,20 +9,22 @@
 	
 	module.showOpenFile = function(){
 		var deferred = Q.defer();
+
+		
 		dialog.showOpenDialog({
 			properties: [ 'openFile' ], 
 			filters: [
    				{ name: 'text', extensions: ['txt'] }
 		   ]
-	   },function(filePaths){
-		   
+	   },
+	   
+	   
+	   function(filePaths){
 			if(_.isUndefined(filePaths)) {
 				deferred.reject()
 			};
-			
 			deferred.resolve();
 		});
-		
 		return deferred.promise;
 	};
 	
