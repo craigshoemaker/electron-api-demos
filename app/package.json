@@ -9,6 +9,7 @@
   "author": "Craig Shoemaker",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^3.10.0",
     "q": "^1.4.1"
   }
 }
