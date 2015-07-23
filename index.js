@@ -1,13 +1,10 @@
 var app = require('app');
-var BrowserWindow = require('browser-window');
-
 var mainWindow;
 
-app.on('ready', function(){
-    mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 800
-    });
+app.on('ready', function () {
     
-    mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
+    require('./index.power-monitor.js');
+
+    mainWindow = require('./index.main-window.js');
+
 });
