@@ -4,11 +4,18 @@
     
 	var BrowserWindow = require('browser-window');
 
-	module = new BrowserWindow({
+	var appWindow = new BrowserWindow({
         width: 1000,
         height: 800
     });
     
-    module.loadUrl('file://' + __dirname + '/app/index.html');
+    appWindow.show();
+    appWindow.openDevTools();
+    
+    appWindow.loadUrl('file://' + __dirname + '/app/index.html');
+    
+    module.get = function(){
+        return appWindow;
+    };
 	
 }(module.exports));
