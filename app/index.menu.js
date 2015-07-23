@@ -10,7 +10,7 @@
       submenu: [
         {
           label: 'About Electron',
-          selector: 'orderFrontStandardAboutPanel:'
+          //selector: 'orderFrontStandardAboutPanel:'
         },
         {
           type: 'separator'
@@ -24,25 +24,25 @@
         },
         {
           label: 'Hide Electron',
-          accelerator: 'Command+H',
-          selector: 'hide:'
+          accelerator: 'CmdOrCtrl+H',
+          //selector: 'hide:'
         },
         {
           label: 'Hide Others',
-          accelerator: 'Command+Shift+H',
-          selector: 'hideOtherApplications:'
+          accelerator: 'CmdOrCtrl+Shift+H',
+          //selector: 'hideOtherApplications:'
         },
         {
           label: 'Show All',
-          selector: 'unhideAllApplications:'
+          //selector: 'unhideAllApplications:'
         },
         {
           type: 'separator'
         },
         {
           label: 'Quit',
-          accelerator: 'Command+Q',
-          selector: 'terminate:'
+          accelerator: 'CmdOrCtrl+Q',
+          //selector: 'terminate:'
         },
       ]
     },
@@ -51,12 +51,12 @@
       submenu: [
         {
           label: 'Undo',
-          accelerator: 'Command+Z',
-          selector: 'undo:'
+          accelerator: 'CmdOrCtrl+Z',
+          //selector: 'undo:'
         },
         {
           label: 'Redo',
-          accelerator: 'Shift+Command+Z',
+          accelerator: 'Shift+CmdOrCtrl+Z',
           selector: 'redo:'
         },
         {
@@ -64,23 +64,23 @@
         },
         {
           label: 'Cut',
-          accelerator: 'Command+X',
+          accelerator: 'CmdOrCtrl+X',
           selector: 'cut:'
         },
         {
           label: 'Copy',
-          accelerator: 'Command+C',
-          selector: 'copy:'
+          accelerator: 'CmdOrCtrl+C',
+          //selector: 'copy:'
         },
         {
           label: 'Paste',
-          accelerator: 'Command+V',
-          selector: 'paste:'
+          accelerator: 'CmdOrCtrl+V',
+          //selector: 'paste:'
         },
         {
           label: 'Select All',
-          accelerator: 'Command+A',
-          selector: 'selectAll:'
+          accelerator: 'CmdOrCtrl+A',
+          //selector: 'selectAll:'
         }
       ]
     },
@@ -89,12 +89,12 @@
       submenu: [
         {
           label: 'Reload',
-          accelerator: 'Command+R',
+          accelerator: 'CmdOrCtrl+R',
           click: function () { remote.getCurrentWindow().reload(); }
         },
         {
           label: 'Toggle DevTools',
-          accelerator: 'Alt+Command+I',
+          accelerator: 'CmdOrCtrl+Shift+I',
           click: function () { remote.getCurrentWindow().toggleDevTools(); }
         },
       ]
@@ -104,20 +104,20 @@
       submenu: [
         {
           label: 'Minimize',
-          accelerator: 'Command+M',
-          selector: 'performMiniaturize:'
+          accelerator: 'CmdOrCtrl+M',
+          //selector: 'performMiniaturize:'
         },
         {
           label: 'Close',
-          accelerator: 'Command+W',
-          selector: 'performClose:'
+          accelerator: 'CmdOrCtrl+W',
+          //selector: 'performClose:'
         },
         {
           type: 'separator'
         },
         {
           label: 'Bring All to Front',
-          selector: 'arrangeInFront:'
+          //selector: 'arrangeInFront:'
         }
       ]
     },
