@@ -6,7 +6,7 @@
 
 	window.$ = window.jQuery = require.main.require('./bower_components/jquery/dist/jquery.js');
 		
-	//require('./index.menu.js');
+	require('./index.menu.js');
 	require('./index.menu-context.js');
 
 	$(function () {
