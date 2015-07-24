@@ -15,6 +15,8 @@
 		require('./index.shell.js');
 		require('./index.dialogs.js');
 		require('./index.browser-window.js');
+		require('./index.app.js');
+		require('./index.screen.js');
 	});
 
 } (window, document, module.exports));
