@@ -1,5 +1,5 @@
 {
-  "name": "api-demos",
+  "name": "electron-api-demos",
   "version": "0.0.1",
   "description": "API demos",
   "main": "index.html",
