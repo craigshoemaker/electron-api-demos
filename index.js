@@ -15,5 +15,9 @@
         require('./index.power-monitor.js');
 
     });
+    
+    mainWindow.on('closed', function () {
+        mainWindow = null;
+    });
 
 } ());
