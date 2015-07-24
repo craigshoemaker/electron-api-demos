@@ -23,10 +23,11 @@
 	});
 	
 	$openExternalButton.click(function(){
-		shell.openExternal('http://craigshoemaker.net')
+		shell.openExternal('http://craigshoemaker.net/about')
 	});
 	
 	$moveToTrashButton.click(function(){
+		$result.html('');
 		var fullPath = path.resolve(__dirname, 'electron-temp.txt');
 		fs.writeFile(fullPath, 'this is trash', 'utf8', function(){
 			$result.append('<li>File is created');
