@@ -1,0 +1,9 @@
+#created-by {
+	position: fixed;
+	right:10px;
+	bottom: 0px;
+	background-color:#fff;
+	padding: 10px;
+	border-radius: 3px;
+	opacity: .75;
+}

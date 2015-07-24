@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="index.css" type="text/css" />        
     </head>
     <body>
         <div class="container">
@@ -24,7 +25,7 @@
                     <ul>
                         <li><a href="javascript:void(0);" id="show-in-folder-button">Show In Folder</a></li>
                         <li><a href="javascript:void(0);" id="open-item-button">Open File in Default App</a></li>
-                        <li><a href="javascript:void(0);" id="open-external-button">Open External URL</a></li>
+                        <li><a href="javascript:void(0);" data-about-link>Open External URL</a></li>
                         <li><a href="javascript:void(0);" id="move-to-trash-button">Move to Trash</a></li>
                         <li><a href="javascript:void(0);" id="beep-button">Play Beep</a></li>
                     </ul>
@@ -60,6 +61,7 @@
             <hr>
             <div id="result"></div>
         </div>
+        <div id="created-by" class="text-muted small">Created by <a href="javascript:void(0);" data-about-link>Craig Shoemaker</a></div>
         <script src="index.js"></script>
     </body>
 </html>
