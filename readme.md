@@ -7,7 +7,7 @@ This project contains a number of demos to help you explore the [Electron](http:
 To setup the demos clone this repository:
 
 ``` shell
-$ git clone **URL**
+$ git clone https://github.com/craigshoemaker/electron-api-demos.git
 ```
 
 Then install the main process modules:
