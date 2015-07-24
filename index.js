@@ -13,11 +13,11 @@
 
         require('./index.global-shortcut.js').register(mainWindow);
         require('./index.power-monitor.js');
+        
+        mainWindow.on('closed', function () {
+            mainWindow = null;
+        });
 
-    });
-    
-    mainWindow.on('closed', function () {
-        mainWindow = null;
     });
 
 } ());
