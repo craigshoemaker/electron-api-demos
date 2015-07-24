@@ -14,6 +14,7 @@
 	$(function () {
 		require('./index.shell.js');
 		require('./index.dialogs.js');
+		require('./index.browser-window.js');
 	});
 
 } (window, document, module.exports));
