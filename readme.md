@@ -2,6 +2,8 @@
 
 This project contains a number of demos to help you explore the [Electron](http://electron.atom.io/) API.
 
+![](screenshot.png)
+
 ## Setup
 
 To setup the demos clone this repository:
