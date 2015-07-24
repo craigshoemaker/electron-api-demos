@@ -1,4 +1,4 @@
-(function(module){
+(function($, module){
 	
 	'use strict';
 	
@@ -6,11 +6,8 @@
 	var app = remote.require('app');
 	
 	var $result = $('#result');
-	var $appInfoButton = $('#app-info-button');
-	var $appCloseButton = $('#close-button');
 	
-	
-	$appInfoButton.click(function(){
+	$('#app-info-button').click(function(){
 		
 		var appMethods = [
 			'getVersion',
@@ -56,13 +53,11 @@
 
 	});
 	
-	$appCloseButton.click(function(){
+	$('#close-button').click(function(){
 		var quit = confirm('Are you sure you want to close this application?');
 		if(quit) {
 			app.quit();
 		}
 	});
-	
-	
-	
-}(module.exports));
+
+}($, module.exports));

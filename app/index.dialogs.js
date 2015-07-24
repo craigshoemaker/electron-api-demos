@@ -1,21 +1,14 @@
 /* global $ */
 
-(function (module) {
+(function ($, module) {
 
 	'use strict';
 
 	var dialogs = require.main.require('./modules/dialogs');
 
 	var $result = $('#result');
-	var $openFileButton = $('#open-file-button');
-	var $openDirectoryButton = $('#open-directory-button');
-	var $createDirectoryButton = $('#create-directory-button');
-	var $saveFileButton = $('#save-file-button');
-	var $errorButton = $('#error-button');
-	var $messageBox = $('#message-box-button');
 
-
-	$openFileButton.click(function () {
+	$('#open-file-button').click(function () {
 
 		var options = {
 			title: 'Open Markdown Files',
@@ -27,7 +20,7 @@
 		});
 	});
 
-	$openDirectoryButton.click(function () {
+	$('#open-directory-button').click(function () {
 		$result.html('');
 		dialogs.openDirectory().then(function (directoryPaths) {
 			directoryPaths.forEach(function (directoryPath, index) {
@@ -36,13 +29,13 @@
 		});
 	});
 
-	$createDirectoryButton.click(function () {
+	$('#create-directory-button').click(function () {
 		dialogs.createDirectory().then(function (directoryPath) {
 			$result.append('<li>' + directoryPath);
 		});
 	});
 
-	$saveFileButton.click(function () {
+	$('#save-file-button').click(function () {
 		var options = {
 			title: 'Save Markdown File',
 			filters: [{ name: 'Markdown', extensions: ['md', 'markdown'] }]
@@ -55,11 +48,11 @@
 		});
 	});
 
-	$errorButton.click(function () {
+	$('#error-button').click(function () {
 		dialogs.error('Big error', 'This is a test of the emergency broadcast system.\n\nThis is a second line.');
 	});
 
-	$messageBox.click(function () {
+	$('#message-box-button').click(function () {
 
 		var options = {
 			'type': 'none',
@@ -75,4 +68,4 @@
 		});
 	});
 
-} (module.exports));
+} ($, module.exports));

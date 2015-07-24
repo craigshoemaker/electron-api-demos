@@ -1,11 +1,10 @@
-(function(module){
+(function($, module){
 	
 	'use strict';
 	
 	var appScreen = require('screen');
 	
 	var $result = $('#result');
-	
 	
 	$('#screen-info-button').click(function(){
 		
@@ -46,4 +45,4 @@
 	});
 	
 	
-}(module.exports));
+}($, module.exports));

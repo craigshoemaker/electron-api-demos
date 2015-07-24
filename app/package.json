@@ -1,12 +1,9 @@
 {
   "name": "electron-api-demos",
   "version": "0.0.1",
-  "description": "API demos",
+  "description": "Electron API demos",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Craig Shoemaker",
+  "author": "Craig Shoemaker <craig@craigshoemaker.net>",
   "license": "MIT",
   "dependencies": {
     "lodash": "^3.10.0",

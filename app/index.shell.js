@@ -1,4 +1,6 @@
-(function(module){
+/// <reference path="../typings/node/node.d.ts"/>
+
+(function($, module){
 	
 	'use strict';
 	
@@ -7,26 +9,21 @@
 	var fs = require('fs');
 	
 	var $result = $('#result');
-	var $showInFolderButton = $('#show-in-folder-button');
-	var $openItemButton = $('#open-item-button');
-	var $openExternalButton = $('#open-external-button');
-	var $moveToTrashButton = $('#move-to-trash-button');
-	var $beepButton = $('#beep-button');
 	
-	$showInFolderButton.click(function(){
+	$('#show-in-folder-button').click(function(){
 		var fullPath = path.resolve(__dirname, 'package.json');
 		shell.showItemInFolder(fullPath);
 	});
 	
-	$openItemButton.click(function(){
+	$('#open-item-button').click(function(){
 		shell.openItem(path.resolve(__dirname, './package.json'));
 	});
 	
-	$openExternalButton.click(function(){
+	$('[data-about-link]').click(function(){
 		shell.openExternal('http://craigshoemaker.net/about')
 	});
 	
-	$moveToTrashButton.click(function(){
+	$('#move-to-trash-button').click(function(){
 		$result.html('');
 		var fullPath = path.resolve(__dirname, 'electron-temp.txt');
 		fs.writeFile(fullPath, 'this is trash', 'utf8', function(){
@@ -36,8 +33,8 @@
 		});
 	});
 	
-	$beepButton.click(function(){
+	$('#beep-button').click(function(){
 		shell.beep();
 	});
 	
-}(module.exports));
+}($, module.exports));

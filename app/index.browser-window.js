@@ -5,13 +5,7 @@
 	var remote = require('remote');
 	var browserWindow = remote.getCurrentWindow();
 	
-	var $progressBarButton = $('#progress-bar-button');
-	var $alwaysOnTopButton = $('#always-on-top-button');
-	var $autoHideMenuButton = $('#auto-hide-menu-button');
-	var $fullScreenButton = $('#full-screen-button');
-	var $minimizeButton = $('#minimize-button');
-	
-	$progressBarButton.click(function(){
+	$('#progress-bar-button').click(function(){
 		var progress = 0;
 		var timer = setInterval(function(){
 			if(progress >= 1){
@@ -25,11 +19,11 @@
 		}, 100);
 	});
 	
-	$alwaysOnTopButton.click(function(){
+	$('#always-on-top-button').click(function(){
 		browserWindow.setAlwaysOnTop(!browserWindow.isAlwaysOnTop());
 	});
 	
-	$autoHideMenuButton.click(function(){
+	$('#auto-hide-menu-button').click(function(){
 		var isMenuBarAutoHide = browserWindow.isMenuBarAutoHide();
 		
 		if (isMenuBarAutoHide) {
@@ -40,11 +34,11 @@
 		}
 	});
 	
-	$fullScreenButton.click(function(){
+	$('#full-screen-button').click(function(){
 		browserWindow.setFullScreen(!browserWindow.isFullScreen());
 	});
 	
-	$minimizeButton.click(function(){
+	$('#minimize-button').click(function(){
 		browserWindow.minimize();
 	});
 	

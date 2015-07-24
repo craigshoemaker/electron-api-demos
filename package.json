@@ -1,14 +1,14 @@
 {
-  "name": "hello-world",
-  "version": "1.0.0",
-  "description": "",
+  "name": "electron-api-demos-main",
+  "version": "0.0.1",
+  "description": "Main process for Electron API demos",
   "main": "index.js",
   "scripts": {
     "test": "electron --debug=5858 .",
     "start" : "electron ."
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Craig Shoemaker <craig@craigshoemaker.net>",
+  "license": "MIT",
   "devDependencies": {
     "electron-prebuilt": "^0.30.0"
   }

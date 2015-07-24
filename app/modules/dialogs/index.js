@@ -1,6 +1,13 @@
 (function (module) {
 
 	'use strict';
+	
+	/*
+	 *
+	 * A lightweight wrapper around the native dialog API
+	 * in order to make a more explicit, promise-based API.
+	 * 
+	 */
 
 	var Q = require('q');
 	var _ = require('lodash');
