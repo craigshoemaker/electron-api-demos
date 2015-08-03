@@ -30,12 +30,15 @@
 	});
 
 	$('#create-directory-button').click(function () {
+		$result.html('');
 		dialogs.createDirectory().then(function (directoryPath) {
 			$result.append('<li>' + directoryPath);
 		});
 	});
 
 	$('#save-file-button').click(function () {
+		$result.html('');
+
 		var options = {
 			title: 'Save Markdown File',
 			filters: [{ name: 'Markdown', extensions: ['md', 'markdown'] }]
@@ -43,9 +46,13 @@
 
 		var content = 'This is a test';
 
-		dialogs.saveFile(content, options, 'md').then(function (filePath) {
-			$result.text(filePath + ' saved');
-		});
+		dialogs.saveFile(content, options, 'md')
+			.then(function (filePath, b, c) {
+				$result.text(filePath + ' saved');
+			})
+			.catch(function(error){
+				$result.text(error);
+			});
 	});
 
 	$('#error-button').click(function () {
