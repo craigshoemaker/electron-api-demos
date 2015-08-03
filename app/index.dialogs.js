@@ -47,7 +47,7 @@
 		var content = 'This is a test';
 
 		dialogs.saveFile(content, options, 'md')
-			.then(function (filePath, b, c) {
+			.then(function (filePath) {
 				$result.text(filePath + ' saved');
 			})
 			.catch(function(error){
