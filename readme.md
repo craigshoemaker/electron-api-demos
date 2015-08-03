@@ -39,7 +39,7 @@ To debug, first start node-inspector:
 ``` shell
 $ node-inspector
 ```
-then, in another console window run the `test` command :
+then, in another console window, start the app with debugging enabled :
 
 ``` shell
 $ npm run start-debug
