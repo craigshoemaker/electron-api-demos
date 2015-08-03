@@ -2,10 +2,16 @@
 <html>
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
-        <link rel="stylesheet" href="index.css" type="text/css" />        
+        <link rel="stylesheet" href="index.css" type="text/css" />
+        <style>
+            body {
+                margin-top:20px;
+            }
+        </style>    
     </head>
     <body>
         <div class="container">
+            <img src="electron.png" title="Electron" alt="Electron" />
             <h1>API Demos</h1>
             
             <div class="row">
@@ -19,6 +25,21 @@
                         <li><a href="javascript:void(0);" id="error-button">Error</a></li>
                         <li><a href="javascript:void(0);" id="message-box-button">Message Box</a></li>
                     </ul>
+                    
+                    <h2>Shell</h2>
+                    <ul>
+                        <li><a href="javascript:void(0);" id="show-in-folder-button">Show In Folder</a></li>
+                        <li><a href="javascript:void(0);" id="open-item-button">Open File in Default App</a></li>
+                        <li><a href="javascript:void(0);" data-about-link>Open External URL</a></li>
+                        <li><a href="javascript:void(0);" id="move-to-trash-button">Move to Trash</a></li>
+                        <li><a href="javascript:void(0);" id="beep-button">Play Beep</a></li>
+                    </ul>
+                    
+                    <h2>Menus</h2>
+                    <ul>
+                        <li>View the menus at the top of the window</li>
+                        <li>Right-click for a context menu</li>
+                    </ul>
                 </div>
                 <div class="col-sm-6">
                     <h2>App</h2>
@@ -31,20 +52,7 @@
                     <ul>
                         <li><a href="javascript:void(0);" id="screen-info-button">Primary Display Screen Info</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h2>Shell</h2>
-                    <ul>
-                        <li><a href="javascript:void(0);" id="show-in-folder-button">Show In Folder</a></li>
-                        <li><a href="javascript:void(0);" id="open-item-button">Open File in Default App</a></li>
-                        <li><a href="javascript:void(0);" data-about-link>Open External URL</a></li>
-                        <li><a href="javascript:void(0);" id="move-to-trash-button">Move to Trash</a></li>
-                        <li><a href="javascript:void(0);" id="beep-button">Play Beep</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6">
+                    
                     <h2>Browser Window</h2>
                     <ul>
                         <li><a href="javascript:void(0);" id="progress-bar-button">Set Progress Bar</a></li>
@@ -53,6 +61,12 @@
                         <li><a href="javascript:void(0);" id="full-screen-button">Toggle Full Screen</a></li>
                         <li><a href="javascript:void(0);" id="minimize-button">Minimize</a></li>
                     </ul>
+                    
+                    <h2>Power Monitor</h2>
+                    <p>If you have a laptop with a working battery, you can view the power monitor
+                        by unplugging and plugging the machine back in again. The console will will then
+                        report the power status.
+                    </p>
                 </div>
             </div>
             <hr>
