@@ -42,5 +42,5 @@ $ node-inspector
 then, in another console window run the `test` command :
 
 ``` shell
-$ npm start-debug
+$ npm run start-debug
 ```
