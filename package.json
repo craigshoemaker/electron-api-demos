@@ -4,7 +4,7 @@
   "description": "Main process for Electron API demos",
   "main": "index.js",
   "scripts": {
-    "test": "electron --debug=5858 .",
+    "start-debug": "electron --debug=5858 .",
     "start" : "electron ."
   },
   "author": "Craig Shoemaker <craig@craigshoemaker.net>",
