@@ -43,8 +43,8 @@
 
 		var content = 'This is a test';
 
-		dialogs.saveFile(content, options, 'md').then(function (directoryPath) {
-			$result.text('File saved');
+		dialogs.saveFile(content, options, 'md').then(function (filePath) {
+			$result.text(filePath + ' saved');
 		});
 	});
 
