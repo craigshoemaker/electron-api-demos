@@ -15,7 +15,7 @@
             <h1>API Demos</h1>
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <h2>Dialogs</h2>
                     <ul>
                         <li><a href="javascript:void(0);" id="open-file-button">Open File</a></li>
@@ -41,7 +41,7 @@
                         <li>Right-click for a context menu</li>
                     </ul>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <h2>App</h2>
                     <ul>
                         <li><a href="javascript:void(0);" id="app-info-button">App Info</a></li>
@@ -61,6 +61,14 @@
                         <li><a href="javascript:void(0);" id="full-screen-button">Toggle Full Screen</a></li>
                         <li><a href="javascript:void(0);" id="minimize-button">Minimize</a></li>
                     </ul>
+                    
+                    
+                </div>
+                <div class="col-sm-4">
+                    <h2>Inter-process Communication</h2>
+                    <p>The code for <code>./index.power-monitor.js</code> and <code>./app/index.js</code> use 
+                    the <code>webContents.send</code> and <code>ipc</code> APIs to facilitate inter-process
+                    communication between the main and renderer process.</p>
                     
                     <h2>Power Monitor</h2>
                     <p>If you have a laptop with a working battery, you can view the power monitor
