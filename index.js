@@ -12,7 +12,7 @@
         mainWindow = require('./index.browser-window.js').get();
 
         require('./index.global-shortcut.js').register(mainWindow);
-        require('./index.power-monitor.js');
+        require('./index.power-monitor.js').register(mainWindow);
         
         mainWindow.on('closed', function () {
             mainWindow = null;

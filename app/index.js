@@ -4,6 +4,8 @@
 
 	'use strict';
 	
+	var ipc = require('ipc');
+	
 	console.log('*** This is running in the renderer process. ***');
 
 	window.$ = window.jQuery = require.main.require('./bower_components/jquery/dist/jquery.js');
@@ -17,6 +19,10 @@
 		require('./index.browser-window.js');
 		require('./index.app.js');
 		require('./index.screen.js');
+	});
+	
+	ipc.on('power', function(e){
+		console.log(e.message);
 	});
 
 } (window, document, module.exports));

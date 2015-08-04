@@ -1,23 +1,39 @@
 (function(module){
 	
 	'use strict';
+  
+    var appWindow = null;
+    var webContents = null;
 	
     var powerMonitor = require('power-monitor');
      
     powerMonitor.on('suspend', function () {
-        console.log('The system is going to sleep');
+        webContents.send('power', {
+            message: 'The system is going to sleep'    
+        });
     });
     
     powerMonitor.on('resume', function () {
-        console.log('The system is resumed from sleep');
+        webContents.send('power', {
+            message: 'The system is resumed from sleep'    
+        });
     });
     
     powerMonitor.on('on-ac', function () {
-        console.log('The machine is plugged in');
+        webContents.send('power', {
+            message: 'The machine is plugged in'    
+        });
     });
     
     powerMonitor.on('on-battery', function () {
-        console.log('The machine is running on battery power, yo!');
+        webContents.send('power', {
+            message: 'The machine is running on battery power, yo!'    
+        });
     });
+    
+    module.register = function(appWindowInstance){
+        appWindow = appWindowInstance;
+        webContents = appWindow.webContents;
+    };
 	
 }(module.exports));
