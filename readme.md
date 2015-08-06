@@ -12,18 +12,10 @@ To setup the demos clone this repository:
 $ git clone https://github.com/craigshoemaker/electron-api-demos.git
 ```
 
-Then install the main process modules:
+Then install via:
 
 ``` shell
 $ npm install
-```
-
-Then install the renderer process dependencies:
-
-``` shell
-$ cd app
-$ npm install
-$ bower install
 ```
 
 # Run the Demos
@@ -33,6 +25,8 @@ To run the demos, you simply execute:
 ``` shell
 $ npm start
 ```
+
+## Debugging
 
 To debug, first start node-inspector:
 
