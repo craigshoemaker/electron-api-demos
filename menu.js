@@ -1,5 +1,12 @@
 var remote = require('remote');
 var Menu = remote.require('menu');
+
+var browserWindow = null;
+
+module.exports.register = function(windowInstance){
+  browserWindow = windowInstance;
+};
+
 var template = [
   {
     label: 'Electron',
@@ -86,12 +93,12 @@ var template = [
       {
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
-        click: function () { remote.getCurrentWindow().reload(); }
+        click: function () { browserWindow.getCurrentWindow().reload(); }
       },
       {
         label: 'Toggle DevTools',
         accelerator: 'CmdOrCtrl+Shift+I',
-        click: function () { remote.getCurrentWindow().toggleDevTools(); }
+        click: function () { browserWindow.getCurrentWindow().toggleDevTools(); }
       },
     ]
   },
