@@ -10,7 +10,6 @@
 
 	window.$ = window.jQuery = require.main.require('./jquery.min.js');
 		
-	require('./menu.js');
 	require('./menu-context.js');
 
 	$(function () {
