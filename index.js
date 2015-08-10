@@ -1,23 +1,17 @@
-(function () {
+var app = require('app');
+var mainWindow;
 
-    'use strict';
+console.log('**** This is running in the main process. ***');
 
-    var app = require('app');
-    var mainWindow;
+app.on('ready', function () {
 
-    console.log('**** This is running in the main process. ***');
+    mainWindow = require('./index.browser-window.js');
 
-    app.on('ready', function () {
+    require('./index.global-shortcut.js').register(mainWindow);
+    require('./index.power-monitor.js').register(mainWindow);
 
-        mainWindow = require('./index.browser-window.js').get();
-
-        require('./index.global-shortcut.js').register(mainWindow);
-        require('./index.power-monitor.js').register(mainWindow);
-        
-        mainWindow.on('closed', function () {
-            mainWindow = null;
-        });
-
+    mainWindow.on('closed', function () {
+        mainWindow = null;
     });
 
-} ());
+});
