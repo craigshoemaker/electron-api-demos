@@ -1,6 +1,8 @@
 /* global $ */
 
-var dialogs = require.main.require('./modules/dialogs');
+var remote = require('remote');
+var dialog = remote.require('dialog');
+var fs = require('fs');
 
 var $result = $('#result');
 
@@ -8,28 +10,54 @@ $('#open-file-button').click(function () {
 
 	var options = {
 		title: 'Open Markdown Files',
+		properties: ['openFile'],
 		filters: [{ name: 'Markdown', extensions: ['md'] }]
 	};
+	
+	var callback = function (filePaths) {
+		if (typeof filePaths === 'undefined') {
+			console.log('No file paths selected');
+		} else {
+			var filePath = filePaths[0];
+			fs.readFile(filePath, 'utf8', function (err, contents) {
+				$result.text(contents);
+			});
+		}
+	};
 
-	dialogs.openFile(options).then(function (contents) {
-		$result.text(contents);
-	});
+	dialog.showOpenDialog(options, callback);
 });
 
 $('#open-directory-button').click(function () {
 	$result.html('');
-	dialogs.openDirectory().then(function (directoryPaths) {
-		directoryPaths.forEach(function (directoryPath, index) {
-			$result.append('<li>' + directoryPath);
-		});
-	});
+	
+	var dialogOptions = {
+		properties: ['openDirectory', 'multiSelections']
+	};
+
+	var callback = function (directoryPaths) {
+		if (typeof directoryPaths !== 'undefined') {
+			directoryPaths.forEach(function (directoryPath, index) {
+				$result.append('<li>' + directoryPath);
+			});
+		}
+	};
+
+	dialog.showOpenDialog(dialogOptions, callback);
 });
 
 $('#create-directory-button').click(function () {
 	$result.html('');
-	dialogs.createDirectory().then(function (directoryPath) {
+	
+	var dialogOptions = {
+		properties: ['createDirectory']
+	};
+
+	var callback = function (directoryPath) {
 		$result.append('<li>' + directoryPath);
-	});
+	};
+	
+	dialog.showOpenDialog(dialogOptions, callback);
 });
 
 $('#save-file-button').click(function () {
@@ -41,18 +69,26 @@ $('#save-file-button').click(function () {
 	};
 
 	var content = 'This is a test';
+	
+	var callback = function (filePath) {
 
-	dialogs.saveFile(content, options, 'md')
-		.then(function (filePath) {
-			$result.text(filePath + ' saved');
-		})
-		.catch(function (error) {
-			$result.text(error);
-		});
+		if (typeof filePath !== 'undefined') {
+
+			fs.writeFile(filePath, content, 'utf8', function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					$result.text(filePath + ' saved');
+				}
+			});
+		}
+	};
+
+	dialog.showSaveDialog(options, callback);
 });
 
 $('#error-button').click(function () {
-	dialogs.error('Big error', 'This is a test of the emergency broadcast system.\n\nThis is a second line.');
+	dialog.showErrorBox('Big error', 'This is a test of the emergency broadcast system.\n\nThis is a second line.');
 });
 
 $('#message-box-button').click(function () {
@@ -65,8 +101,11 @@ $('#message-box-button').click(function () {
 		detail: 'Choose wisely!',
 		filters: [{ name: 'Markdown', extensions: ['md', 'markdown'] }]
 	};
-
-	dialogs.messageBox(options).then(function (buttonIndex) {
+	
+	var callback = function (buttonIndex) {
 		$result.text('Button index: ' + buttonIndex);
-	});
+	};
+
+	dialog.showMessageBox(options, callback);
+
 });
