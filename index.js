@@ -5,10 +5,10 @@ console.log('**** This is running in the main process. ***');
 
 app.on('ready', function () {
 
-    mainWindow = require('./index.browser-window.js');
+    mainWindow = require('./browser-window.js');
 
-    require('./index.global-shortcut.js').register(mainWindow);
-    require('./index.power-monitor.js').register(mainWindow);
+    require('./global-shortcut.js').register(mainWindow);
+    require('./power-monitor.js').register(mainWindow);
 
     mainWindow.on('closed', function () {
         mainWindow = null;

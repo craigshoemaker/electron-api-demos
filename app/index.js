@@ -10,15 +10,15 @@
 
 	window.$ = window.jQuery = require.main.require('./bower_components/jquery/dist/jquery.js');
 		
-	require('./index.menu.js');
-	require('./index.menu-context.js');
+	require('./menu.js');
+	require('./menu-context.js');
 
 	$(function () {
-		require('./index.shell.js');
-		require('./index.dialogs.js');
-		require('./index.browser-window.js');
-		require('./index.app.js');
-		require('./index.screen.js');
+		require('./shell.js');
+		require('./dialogs.js');
+		require('./browser-window.js');
+		require('./app.js');
+		require('./screen.js');
 	});
 	
 	ipc.on('power', function(e){
