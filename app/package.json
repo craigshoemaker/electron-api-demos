@@ -4,9 +4,5 @@
   "description": "Electron API demos",
   "main": "index.html",
   "author": "Craig Shoemaker <craig@craigshoemaker.net>",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^3.10.0",
-    "q": "^1.4.1"
-  }
+  "license": "MIT"
 }

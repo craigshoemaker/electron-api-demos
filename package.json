@@ -5,15 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start-debug": "electron --debug=5858 .",
-    "start": "electron .",
-    "postinstall": "gulp install"
+    "start": "electron ."
   },
   "author": "Craig Shoemaker <craig@craigshoemaker.net>",
   "license": "MIT",
   "devDependencies": {
     "electron-prebuilt": "^0.30.0",
-    "gulp": "^3.9.0",
-    "node-inspector": "^0.12.2",
-    "shelljs": "^0.5.1"
+    "node-inspector": "^0.12.2"
   }
 }

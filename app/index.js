@@ -8,7 +8,7 @@
 	
 	console.log('*** This is running in the renderer process. ***');
 
-	window.$ = window.jQuery = require.main.require('./bower_components/jquery/dist/jquery.js');
+	window.$ = window.jQuery = require.main.require('./jquery.min.js');
 		
 	require('./menu.js');
 	require('./menu-context.js');
